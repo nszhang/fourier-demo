@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fourier Demo
 
-## Getting Started
+An interactive Fourier series playground built with [Next.js](https://nextjs.org/), React, TypeScript, and Tailwind CSS. The app visualizes how periodic signals can be reconstructed from sinusoidal components using animated epicycles, waveform plots, and a live frequency spectrum.
 
-First, run the development server:
+## What it does
+
+This project lets you explore Fourier series in a more visual, hands-on way. You can switch between classic preset waveforms like square, triangle, and sawtooth waves, or build your own custom periodic signal term by term.
+
+The interface updates in real time as you change harmonics, amplitudes, basis functions, phase offsets, and period length. That makes it useful both as a learning tool and as a small demo of interactive mathematical visualization on the web.
+
+## Features
+
+- Animated epicycle view showing how rotating vectors sum into the final signal
+- Waveform panel with approximation, target wave, and component-wave overlays
+- Frequency spectrum view for inspecting dominant harmonics and overall energy
+- Built-in preset series for square, triangle, and sawtooth waves
+- Custom series editor with per-term amplitude, harmonic, basis, and phase controls
+- Text-based Fourier expression input for supported series forms
+- Import/export support for custom series definitions
+- Saved custom-series slots persisted in local storage
+
+## Tech stack
+
+- `Next.js` App Router
+- `React`
+- `TypeScript`
+- `Tailwind CSS`
+- `SVG`-based data visualization and animation
+
+## Running locally
+
+Install dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000).
+
+## Available scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/` contains the Next.js app shell and page entrypoints
+- `components/fourier/` contains the interactive UI and visualization panels
+- `lib/` contains Fourier math, parsing helpers, and animation utilities
+- `types/` contains shared TypeScript types
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Why this project exists
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fourier series are often introduced through static formulas, but the intuition becomes much clearer when you can watch the partial sums evolve over time. This demo is meant to make that process tangible by connecting the equation, the rotating vectors, the waveform, and the harmonic spectrum in one place.
